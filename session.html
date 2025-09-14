@@ -1,115 +1,36 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sesiune de Antrenament – VectorServe</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            color: #32cd32;
-        }
-        button {
-            padding: 15px 25px;
-            margin: 10px;
-            font-size: 1.2em;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        #startBtn { background: #1e90ff; color: white; }
-        #stopBtn { background: #ff6347; color: white; }
-        #nextBtn { background: #32cd32; color: white; }
-        #resetBtn { background: #ffa500; color: white; }
-        #timer {
-            font-size: 2em;
-            margin: 20px 0;
-        }
-        #progress {
-            margin-top: 30px;
-            font-size: 1.3em;
-            color: #ffd700;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sesiune de antrenament</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    let seconds = 0;
+    function startTimer() {
+      setInterval(() => {
+        seconds++;
+        document.getElementById("timer").innerText = "Timp: " + seconds + " secunde";
+      }, 1000);
+    }
+
+    let progress = 0;
+    function addProgress() {
+      progress += 10;
+      if (progress > 100) progress = 100;
+      document.getElementById("progress").innerText = "Progres: " + progress + "%";
+    }
+  </script>
 </head>
 <body>
-    <h1>Sesiune de Antrenament</h1>
-    <p>Bine ai venit la prima ta sesiune! 🎾</p>
+  <h1>Sesiune de antrenament</h1>
+  <h2>Bine ai venit la prima ta sesiune!</h2>
 
-    <!-- Cronometru -->
-    <div id="timer">00:00</div>
-    <button id="startBtn">Start</button>
-    <button id="stopBtn">Stop</button>
+  <div id="timer">Timp: 0 secunde</div><br>
+  <div id="progress">Progres: 0%</div><br>
 
-    <!-- Următoarea lovitură -->
-    <p id="exercise">Pregătit pentru prima lovitură!</p>
-    <button id="nextBtn">Următoarea lovitură</button>
-
-    <!-- Progres -->
-    <div id="progress">Lovituri efectuate: 0</div>
-    <button id="resetBtn">Resetează progresul</button>
-
-    <script>
-        // Cronometru
-        let timer;
-        let seconds = 0;
-        let minutes = 0;
-
-        function updateTimer() {
-            let sec = seconds < 10 ? "0" + seconds : seconds;
-            let min = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("timer").textContent = min + ":" + sec;
-        }
-
-        document.getElementById("startBtn").onclick = function() {
-            timer = setInterval(function() {
-                seconds++;
-                if (seconds === 60) {
-                    seconds = 0;
-                    minutes++;
-                }
-                updateTimer();
-            }, 1000);
-        };
-
-        document.getElementById("stopBtn").onclick = function() {
-            clearInterval(timer);
-        };
-
-        // Următoarea lovitură + progres
-        const exercises = [
-            "Forehand cu putere 💪",
-            "Backhand controlat 🎯",
-            "Serviciu rapid ⚡",
-            "Volée la fileu 🕊️",
-            "Lob defensiv 🛡️"
-        ];
-        let index = 0;
-        let hits = parseInt(localStorage.getItem("hits")) || 0;
-
-        // afișăm progresul salvat
-        document.getElementById("progress").textContent = "Lovituri efectuate: " + hits;
-
-        document.getElementById("nextBtn").onclick = function() {
-            index = (index + 1) % exercises.length;
-            document.getElementById("exercise").textContent = exercises[index];
-            hits++;
-            localStorage.setItem("hits", hits); // salvăm progresul
-            document.getElementById("progress").textContent = "Lovituri efectuate: " + hits;
-        };
-
-        // Resetare progres
-        document.getElementById("resetBtn").onclick = function() {
-            hits = 0;
-            localStorage.setItem("hits", hits);
-            document.getElementById("progress").textContent = "Lovituri efectuate: " + hits;
-        };
-    </script>
+  <button onclick="startTimer()">Start Cronometru</button>
+  <button onclick="addProgress()">Adaugă progres</button>
+  <button onclick="location.href='index.html'">Înapoi la meniu</button>
 </body>
 </html>
