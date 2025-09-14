@@ -1,26 +1,47 @@
-/* Fundal modern în degrade */
+/* Fundal sportiv în degrade */
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #1e3c72, #2a5298);
-  color: white;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
   margin: 0;
   padding: 0;
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  max-width: 600px;
+  width: 90%;
 }
 
 /* Titluri */
 h1, h2 {
-  margin-top: 40px;
-  text-shadow: 1px 1px 4px black;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
 
-/* Butoane stilizate */
+/* Paragraf */
+p {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+/* Butoane */
 button {
   background-color: #ffcc00;
+  color: #222;
   border: none;
-  padding: 12px 24px;
-  margin: 20px;
+  padding: 12px 30px;
+  margin: 10px;
   font-size: 18px;
+  font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
@@ -34,9 +55,10 @@ button:hover {
 /* Cronometru și progres */
 #timer, #progress {
   font-size: 22px;
-  margin: 20px 0;
-  padding: 10px;
-  background: rgba(0,0,0,0.3);
+  margin: 15px 0;
+  padding: 12px;
+  background: rgba(255,255,255,0.2);
   border-radius: 10px;
   display: inline-block;
+  min-width: 200px;
 }
