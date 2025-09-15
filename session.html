@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sesiune de antrenament</title>
+  <title>Training Session</title>
   <link rel="stylesheet" href="style.css">
   <script>
     let seconds = 0;
+    let timerInterval;
+
     function startTimer() {
-      setInterval(() => {
+      if (timerInterval) return; // Prevent multiple intervals
+      timerInterval = setInterval(() => {
         seconds++;
-        document.getElementById("timer").innerText = "Timp: " + seconds + " secunde";
+        document.getElementById("timer").innerText = "⏱️ Time: " + seconds + "s";
       }, 1000);
     }
 
@@ -18,19 +21,21 @@
     function addProgress() {
       progress += 10;
       if (progress > 100) progress = 100;
-      document.getElementById("progress").innerText = "Progres: " + progress + "%";
+      document.getElementById("progress").innerText = "📈 Progress: " + progress + "%";
     }
   </script>
 </head>
 <body>
-  <h1>Sesiune de antrenament</h1>
-  <h2>Bine ai venit la prima ta sesiune!</h2>
+  <div class="container">
+    <h1>Training Session 🎾</h1>
+    <h2>Welcome to your first AI-powered practice!</h2>
 
-  <div id="timer">Timp: 0 secunde</div><br>
-  <div id="progress">Progres: 0%</div><br>
+    <div id="timer">⏱️ Time: 0s</div><br>
+    <div id="progress">📈 Progress: 0%</div><br>
 
-  <button onclick="startTimer()">Start Cronometru</button>
-  <button onclick="addProgress()">Adaugă progres</button>
-  <button onclick="location.href='index.html'">Înapoi la meniu</button>
+    <button onclick="startTimer()">Start Timer</button>
+    <button onclick="addProgress()">Add Progress</button>
+    <button onclick="location.href='index.html'">Back to Menu</button>
+  </div>
 </body>
 </html>
