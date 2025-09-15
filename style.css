@@ -1,19 +1,21 @@
-/* Fundal sportiv în degrade */
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1abc9c, #16a085);
   color: #fff;
   margin: 0;
   padding: 0;
-  text-align: center;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .container {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
@@ -21,44 +23,44 @@ body {
   width: 90%;
 }
 
-/* Titluri */
 h1, h2 {
   margin-bottom: 20px;
+  font-weight: 600;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
 
-/* Paragraf */
 p {
   margin-bottom: 30px;
   font-size: 18px;
+  line-height: 1.6;
 }
 
-/* Butoane */
+/* Buttons */
 button {
-  background-color: #ffcc00;
+  background-color: #f1c40f;
   color: #222;
   border: none;
-  padding: 12px 30px;
-  margin: 10px;
-  font-size: 18px;
-  font-weight: bold;
+  padding: 14px 32px;
+  margin: 12px;
+  font-size: 16px;
+  font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #ffaa00;
-  transform: scale(1.05);
+  background-color: #f39c12;
+  transform: translateY(-2px) scale(1.05);
 }
 
-/* Cronometru și progres */
+/* Training stats */
 #timer, #progress {
-  font-size: 22px;
+  font-size: 20px;
   margin: 15px 0;
   padding: 12px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 10px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
   display: inline-block;
   min-width: 200px;
 }
