@@ -10,15 +10,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # Ia codul de pe GitHub
       - uses: actions/checkout@v3
         with:
-          persist-credentials: false  # necesar pentru push-ul pe gh-pages
-
-      # Publică site-ul pe GitHub Pages
+          persist-credentials: false
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./             # fișierele sunt direct în rădăcină
-          force_orphan: true          # creează branch-ul gh-pages dacă nu există
+          publish_dir: ./site
+          branch: gh-pages
