@@ -1,36 +1,42 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sesiune de antrenament</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    let seconds = 0;
-    function startTimer() {
-      setInterval(() => {
-        seconds++;
-        document.getElementById("timer").innerText = "Timp: " + seconds + " secunde";
-      }, 1000);
-    }
-
-    let progress = 0;
-    function addProgress() {
-      progress += 10;
-      if (progress > 100) progress = 100;
-      document.getElementById("progress").innerText = "Progres: " + progress + "%";
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VectorServe - Tennis Training AI</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h1>Sesiune de antrenament</h1>
-  <h2>Bine ai venit la prima ta sesiune!</h2>
+<body class="home">
 
-  <div id="timer">Timp: 0 secunde</div><br>
-  <div id="progress">Progres: 0%</div><br>
+    <div class="overlay"></div>
+    <header>
+        <h1>VectorServe</h1>
+        <p>AI-powered tennis coaching at your fingertips</p>
+    </header>
 
-  <button onclick="startTimer()">Start Cronometru</button>
-  <button onclick="addProgress()">Adaugă progres</button>
-  <button onclick="location.href='index.html'">Înapoi la meniu</button>
+    <main class="menu">
+        <a href="session.html" class="btn">Start Training</a>
+        <a href="#about" class="btn">About</a>
+        <a href="#contact" class="btn">Contact</a>
+    </main>
+
+    <section id="about" class="section">
+        <h2>About VectorServe</h2>
+        <p>
+            VectorServe is an innovative AI-powered platform that analyzes your tennis shots,
+            compares them with professionals, and gives you real-time feedback to improve your game.
+        </p>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit" class="btn">Send</button>
+        </form>
+    </section>
+
 </body>
 </html>
