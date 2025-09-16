@@ -1,64 +1,108 @@
-/* Fundal sportiv în degrade */
+/* Global styles */
 body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-align: center;
+    background: url('tennis-court.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    position: relative;
 }
 
-.container {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  max-width: 600px;
-  width: 90%;
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
 }
 
-/* Titluri */
-h1, h2 {
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+header {
+    padding: 50px 20px 20px;
 }
 
-/* Paragraf */
-p {
-  margin-bottom: 30px;
-  font-size: 18px;
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px #000;
 }
 
-/* Butoane */
-button {
-  background-color: #ffcc00;
-  color: #222;
-  border: none;
-  padding: 12px 30px;
-  margin: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+header p {
+    font-size: 1.2rem;
+    color: #ccc;
 }
 
-button:hover {
-  background-color: #ffaa00;
-  transform: scale(1.05);
+/* Buttons */
+.menu {
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
 }
 
-/* Cronometru și progres */
-#timer, #progress {
-  font-size: 22px;
-  margin: 15px 0;
-  padding: 12px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 10px;
-  display: inline-block;
-  min-width: 200px;
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+}
+
+.btn.disabled {
+    background: #555;
+    pointer-events: none;
+}
+
+/* Sections */
+.section {
+    background: rgba(255,255,255,0.1);
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Contact form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.contact-form button {
+    cursor: pointer;
 }
